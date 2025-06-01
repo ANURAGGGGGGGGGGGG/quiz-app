@@ -1,0 +1,109 @@
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Theme container styles */
+.theme-container {
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme .theme-container {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+/* Theme toggle button styles */
+.theme-toggle-btn {
+  background-color: transparent;
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: #212529;
+}
+
+.dark-theme .theme-toggle-btn {
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark theme component styles */
+.dark-theme .quiz-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark theme text adjustments */
+.dark-theme h1, 
+.dark-theme h2, 
+.dark-theme h3, 
+.dark-theme h4, 
+.dark-theme h5, 
+.dark-theme h6 {
+  color: #f0f0f0;
+}
+
+.dark-theme .text-muted, 
+.dark-theme .text-secondary {
+  color: #adb5bd !important;
+}
+
+.dark-theme .display-5 {
+  color: #f0f0f0;
+}
+
+/* Dark theme button styles */
+.dark-theme .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0a58ca;
+}
+
+.dark-theme .btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Dark theme answer button styles */
+.dark-theme .answer-button {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+.dark-theme .answer-button:hover {
+  background-color: #3a3a3a;
+  border-color: #0d6efd;
+}
+
+.dark-theme .answer-button.correct {
+  background-color: rgba(25, 135, 84, 0.2);
+  border-color: #198754;
+  color: #75b798;
+}
+
+.dark-theme .answer-button.incorrect {
+  background-color: rgba(220, 53, 69, 0.2);
+  border-color: #dc3545;
+  color: #ea868f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .theme-toggle-btn {
+    padding: 0.4rem 0.75rem;
+  }
+}
