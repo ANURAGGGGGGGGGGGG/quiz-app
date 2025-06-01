@@ -1,0 +1,164 @@
+/* Base container styles */
+#root {
+  @apply max-w-4xl mx-auto p-4 md:p-8 text-center;
+}
+
+.app-container {
+  @apply bg-white rounded-lg shadow-lg p-4 md:p-8 w-full max-w-3xl mx-auto;
+}
+
+/* Quiz Header Styles */
+.quiz-header {
+  @apply mb-6 md:mb-8;
+}
+
+.quiz-header h1 {
+  @apply text-gray-800 mb-2;
+}
+
+.quiz-description {
+  @apply text-gray-600 text-sm md:text-base;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+  @apply flex flex-col items-center w-full;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+  @apply w-full h-2.5 bg-gray-100 rounded mb-4 md:mb-6 relative;
+}
+
+.progress-bar {
+  @apply h-full bg-green-500 rounded transition-all duration-300 ease-in-out;
+}
+
+.progress-text {
+  @apply mt-1 text-xs md:text-sm text-gray-600;
+}
+
+/* Question Styles */
+.question-section {
+  @apply w-full mb-6;
+}
+
+.question-count {
+  @apply text-sm text-gray-600 mb-3;
+}
+
+.question-text {
+  @apply text-lg md:text-xl font-semibold text-gray-800 mb-6;
+}
+
+/* Answer Styles */
+.answer-section {
+  @apply w-full flex flex-col gap-2 md:gap-3;
+}
+
+.answer-button {
+  @apply bg-gray-50 border border-gray-200 rounded-lg p-3 md:p-4 text-sm md:text-base cursor-pointer transition-all duration-200 text-left text-black hover:bg-gray-100;
+}
+
+.answer-button:hover {
+  @apply border-blue-400;
+}
+
+.answer-button.correct {
+  @apply bg-green-100 border-green-500 text-green-800;
+}
+
+.answer-button.incorrect {
+  @apply bg-red-100 border-red-500 text-red-800;
+}
+
+.answer-button.disabled {
+  @apply opacity-60 cursor-not-allowed;
+}
+
+/* Quiz Setup Styles */
+.quiz-setup {
+  @apply w-full max-w-md mx-auto;
+}
+
+.setup-form {
+  @apply flex flex-col gap-4 w-full;
+}
+
+.form-group {
+  @apply flex flex-col gap-1 text-left;
+}
+
+.form-group label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.form-select {
+  @apply w-full p-2 border border-gray-300 rounded-md bg-white text-gray-800;
+}
+
+.start-button {
+  @apply mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Results Styles */
+.results-container {
+  @apply w-full text-center;
+}
+
+.results-title {
+  @apply text-xl md:text-2xl font-bold text-gray-800 mb-2;
+}
+
+.results-score {
+  @apply text-3xl md:text-4xl font-bold text-blue-600 mb-4;
+}
+
+.results-message {
+  @apply text-gray-600 mb-6;
+}
+
+.restart-button {
+  @apply bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Loading Styles */
+.loading-container {
+  @apply flex flex-col items-center justify-center py-8;
+}
+
+.loading-spinner {
+  @apply w-12 h-12 border-4 border-gray-200 rounded-full animate-spin mb-4;
+}
+
+.loading-spinner:after {
+  @apply content-[''] block w-10 h-10 rounded-full border-t-4 border-blue-600;
+}
+
+.loading-text {
+  @apply text-gray-600;
+}
+
+/* Error Styles */
+.error-container {
+  @apply p-4 bg-red-50 border border-red-200 rounded-md text-red-800 mb-4;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .app-container {
+    @apply p-3;
+  }
+  
+  .question-text {
+    @apply text-base mb-4;
+  }
+  
+  .answer-button {
+    @apply p-2.5 text-sm;
+  }
+  
+  .results-score {
+    @apply text-2xl;
+  }
+}
