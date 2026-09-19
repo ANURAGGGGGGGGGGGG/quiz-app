@@ -1,59 +1,90 @@
-/* Import Bootstrap CSS */
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "tailwindcss";
 
-/* Base styles */
+/* Base page */
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  place-items: center;
-  background-color: #f8f9fa;
+  background-color: #eef1fb;
+  background-image:
+    radial-gradient(60rem 30rem at 15% -10%, rgba(99, 102, 241, 0.16), transparent 60%),
+    radial-gradient(50rem 28rem at 90% 110%, rgba(168, 85, 247, 0.14), transparent 60%);
+  background-attachment: fixed;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
   width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
 }
 
-
-
-/* Custom utility classes */
-.quiz-container {
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* Ambient blurred blobs behind the card (purely decorative) */
+.ambient {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
+.ambient span {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+}
 
+.ambient .blob-a {
+  width: 28rem;
+  height: 28rem;
+  left: -8rem;
+  top: -8rem;
+  background: #c7d2fe;
+}
 
-/* Responsive adjustments */
+.ambient .blob-b {
+  width: 26rem;
+  height: 26rem;
+  right: -7rem;
+  bottom: -9rem;
+  background: #e9d5ff;
+}
+
+/* ============================================
+   Reduced Motion Preferences
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
-  }
-  
-  .quiz-container {
-    padding: 1rem;
+    padding: 1rem 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
   #root {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
   }
-  
-  .quiz-container {
-    padding: 0.75rem;
-  }
-  
-
 }

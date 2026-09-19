@@ -7,16 +7,21 @@ import { ThemeProvider } from './context/ThemeContext'
 function App() {
   return (
     <ThemeProvider>
-      <div className="container rounded shadow p-4 my-4 theme-container">
-        <div className="d-flex justify-content-end mb-3">
+      <div className="ambient" aria-hidden="true">
+        <span className="blob-a" />
+        <span className="blob-b" />
+      </div>
+      <div className="app-card theme-container">
+        <div className="app-topbar">
+          <QuizHeader
+            title="React Quiz Challenge"
+            description="Five questions. One leaderboard — you."
+          />
           <ThemeToggle />
         </div>
-        <QuizHeader 
-          title="React Quiz Challenge" 
-          description="Test your knowledge with these quiz questions!" 
-        />
         <Quiz />
       </div>
+      <p className="app-footnote">Questions by OpenTriviaDB</p>
     </ThemeProvider>
   )
 }
